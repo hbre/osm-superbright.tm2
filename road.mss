@@ -1,5 +1,5 @@
 // Basic color palette, from which variations will be derived.
-@motorway:          #fc8;
+@motorway:          #aacdff;
 @main:              #fea;
 @street:            #fff;
 @street_limited:    #f3f3f3;
@@ -18,16 +18,16 @@
 #road, #bridge, #tunnel {
   
   // casing/outlines & single lines
-  ::case[zoom>=6]['mapnik::geometry_type'=2] {
+  ::case[zoom>=7]['mapnik::geometry_type'=2] {
     [class='motorway'] {
       line-join:round;
-      line-color: mix(@motorway, #800, 75);
+      line-color: mix(@motorway, #000, 80);
       #road { line-cap: round; }
       #tunnel { line-dasharray:3,2; }
-      [zoom>=6]  { line-width:0.4; }
-      [zoom>=7]  { line-width:0.6; }
-      [zoom>=8] { line-width:1.5; }
-      [zoom>=10]  { line-width:3; }
+      //[zoom>=6]  { line-width:0.2; }
+      [zoom>=7]  { line-width:0.2; }
+      [zoom>=8] { line-width:0.3; }
+      [zoom>=10]  { line-width:0.5; }
       [zoom>=13] { line-width:3.5;  }
       [zoom>=14] { line-width:5; }
       [zoom>=15] { line-width:7; }
@@ -35,7 +35,7 @@
     }
     [class='motorway_link'][zoom>=13] {
       line-join:round;
-      line-color: mix(@motorway, #800, 75);
+      line-color: @land * 0.95;
       #road { line-cap: round; }
       #tunnel { line-dasharray:3,2; }
       [zoom>=13] { line-width:1; }
@@ -45,13 +45,13 @@
     }
     [class='main'] {
       line-join:round;
-      line-color: mix(@main, #800, 75);
+      line-color: @land * 0.90;
       #road { line-cap: round; }
       #tunnel { line-dasharray:3,2; }
-      [zoom>=6] { line-width:0.2; }
-      [zoom>=7] { line-width:0.4; }
-      [zoom>=8] { line-width:1.5; }
-      [zoom>=10] { line-width:2.4; }
+      //[zoom>=6] { line-width:0.2; }
+      [zoom>=7] { line-width:0.0; }
+      [zoom>=8] { line-width:0.2; }
+      [zoom>=10] { line-width:0.4; }
       [zoom>=13] { line-width:2.5; }
       [zoom>=14] { line-width:4; }
       [zoom>=15] { line-width:5; }
@@ -61,8 +61,8 @@
       line-join:round;
       #road { line-cap: round; }
       #tunnel { line-dasharray:3,2; }
-      line-color: @land * 0.8;
-      [zoom>=12] { line-width:0.5; }
+      line-color: @land * 0.95;
+      [zoom>=12] { line-width:0.05; }
       [zoom>=14] { line-width:1; }
       [zoom>=15] { line-width:4; }
       [zoom>=16] { line-width:6.5; }

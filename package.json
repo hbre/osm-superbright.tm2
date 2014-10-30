@@ -1,6 +1,6 @@
 {
-    "name": "mapbox-studio-osm-bright",
+    "name": "osm-superbright",
     "version": "1.0.3",
-    "description": "A full-featured template / example project for Mapbox Studio using Mapbox Streets vector tiles.",
+    "description": "A superlight template.",
     "main": "./package.json"
 }

@@ -8,7 +8,7 @@
 // also in the #water_label and #waterway_label layers inside a color
 // manipulation function to get a darker shade of the same hue.
 @land: #f8f4f0;
-@water: #a0c8f0;
+@water: #d8e6f4;
 
 Map {
   background-color:@land;
@@ -18,7 +18,7 @@ Map {
 // Political boundaries
 
 #admin {
-  opacity: 0.5;
+  opacity: 0.2;
   line-join: round;
   line-color: #446;
   [maritime=1] {
@@ -30,7 +30,7 @@ Map {
     line-width: 0.8;
     line-cap: round;
     [zoom>=4] { line-width: 1.2; }
-    [zoom>=6] { line-width: 2; }
+    [zoom>=6] { line-width: 1.4; }
     [zoom>=8] { line-width: 4; }
     [disputed=1] { line-dasharray: 4,4; }
   }
@@ -38,7 +38,7 @@ Map {
   [admin_level>=3] {
     line-width: 0.3;
     line-dasharray: 10,3,3,3;
-    [zoom>=6] { line-width: 1; }
+    [zoom>=6] { line-width: 0.8; }
     [zoom>=8] { line-width: 1.5; }
     [zoom>=12] { line-width: 2; }
   }
@@ -97,13 +97,13 @@ Map {
   // OpenStreetMap, so this layer includes both. The 'class' field
   // is a highly opinionated simplification of the myriad LULC
   // tag combinations into a limited set of general classes.
-  [class='park'] { polygon-fill: #d8e8c8; }
-  [class='cemetery'] { polygon-fill: mix(#d8e8c8, #ddd, 25%); }
+  [class='park'] { polygon-fill: #d8e8c8; opacity: 0.05;}
+  [class='cemetery'] { polygon-fill: mix(#d8e8c8, #ddd, 25%); opacity: 0.05; }
   [class='hospital'] { polygon-fill: #fde; }
   [class='school'] { polygon-fill: #f0e8f8; }
   ::overlay {
     // Landuse classes look better as a transparent overlay.
-    opacity: 0.1;
+    opacity: 0.05;
     [class='wood'] { polygon-fill: #6a4; polygon-gamma: 0.5; }
   }
 }
